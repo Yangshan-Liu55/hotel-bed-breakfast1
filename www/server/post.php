@@ -77,7 +77,8 @@ $connection = mysqli_connect($dbHost , $dbUser , $dbPass , $dbName);
 if(!$connection){
     echo "<h1>" . mysqli_connect_error() . "</h1>"; exit;
 }
-mysqli_set_charset($connection, "utf8");
+
+mysqli_set_charset($connection, "utf8"); //för svenska tecken
 
 // Förberedd en SQL-sats
 if ($email!="") {
