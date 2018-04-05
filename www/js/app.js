@@ -181,8 +181,8 @@ angular.module('HotelApp', ['ionic'])
 
   }
 
-  //hit kommer data att skickas och hämtas
-  var url = "http://www.yangshan.dx.am/index.php";
+  //hit kommer data att hämtas
+  var url = "http://www.yangshan.dx.am/server/get.php";
 
   //get rooms data from database
   $http.get(url)
@@ -257,7 +257,7 @@ angular.module('HotelApp', ['ionic'])
 
   $scope.submit = function(){
     //hit kommer data att skickas och hämtas
-    var url = "http://www.yangshan.dx.am/index.php";
+    var url = "http://www.yangshan.dx.am/server/post.php";
 
     //data skickas via post
     $http.post(url, $scope.bookinfo)

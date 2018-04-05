@@ -44,10 +44,13 @@ $btime = date("Y-m-d H:i:s",time());
 // send email
 $adatestr = substr($adate, 0, 10);
 $ddatestr = substr($ddate, 0, 10);
-$infmt ="<p><b>Name:</b> $fname $lname  <b>Mobile:</b> $mobile  <b>Email:</b> $email \r\n</P>".
+$infmt ="<p><b>Name:</b> $fname $lname \r\n</P>".
+        "<p><b>Mobile:</b> $mobile \r\n</P>".
+        "<p><b>Email:</b> $email \r\n</P>".
         "<p><b>Adults:</b> $adults  <b>Children:</b> $child \r\n</p>".
         "<p><b>Room:</b> $roomname  <b>Price:</b> $price kr \r\n</p>".
-        "<p><b>Arrival Date:</b> $adatestr  <b>Departual Date:</b> $ddatestr \r\n</p>".
+        "<p><b>Arrival Date:</b> $adatestr  \r\n</p>".
+        "<p><b>Departual Date:</b> $ddatestr \r\n</p>".
         "<p><b>Nights:</b> $nights \r\n</p>".
         "<p><b>Total:</b> $total kr \r\n</p>".
         "<p>Welcome!</p>";
@@ -64,7 +67,7 @@ if ($email != "") {
 }
 
 
-// Logga in i databasen!
+// Logga in i databasen! and send the booking information to database
 $dbHost = "fdb18.awardspace.net";
 $dbUser = "2673761_contacts";
 $dbPass = "liangshan87";
@@ -84,19 +87,5 @@ if ($email!="") {
     mysqli_query($connection , $sql) or die(mysqli_error($connection));
         
 }
-
-// hämta data från databas
-$query="SELECT * FROM rooms";
-
-$table=mysqli_query($connection, $query) 
-or die(mysql_error($connection));
-
-$rows=array();
-
-while($row = mysqli_fetch_assoc($table)) {
-    $rows[] = $row;
- }
- 
- echo json_encode($rows); 
 
 ?>
