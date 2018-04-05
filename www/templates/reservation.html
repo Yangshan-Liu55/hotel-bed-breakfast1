@@ -1,0 +1,35 @@
+<ion-view view-title="Your Reservation">
+    <ion-content class="padding">
+
+        <h2 class="myTitle1">Thank you, {{bookinfo.fname}} {{bookinfo.lname}}. Here comes your reservation from us:</h2>
+
+        <div class="item item-text-wrap">
+            <p><b>Name:</b> {{bookinfo.fname}} {{bookinfo.lname}}  <b>Mobile:</b> {{bookinfo.mobile}}  <b>Email:</b> {{bookinfo.email}}</P>
+            <p><b>Adults:</b> {{bookinfo.adults}}  <b>Children:</b> {{bookinfo.child}} </p>
+            <p><b>Room:</b> {{bookinfo.roomname}}  <b>Price:</b> {{bookinfo.price}} kr </p>
+            <p><b>Arrival Date:</b> {{bookinfo.adate}}</p>
+            <p><b>Departual Date:</b> {{bookinfo.ddate}} </p>
+            <p><b>Nights:</b> {{bookinfo.nights}} </p>
+            <p><b>Total:</b> {{bookinfo.total}} kr </p>
+        </div>
+        
+
+        <br><br>
+        <p>En email has been sent to you! Welcome!</p>
+
+        <br><br>
+
+      <!-- for testing -->
+        <!-- <div class="item item-text-wrap">
+            Booking Information: {{bookinfo}}
+        </div>
+
+        <h3>Response from server after post</h3>
+        <div class="item item-text-wrap">
+          {{response}}
+        </div> -->
+
+      <div ng-include="'../templates/footer.html'"></div>
+
+    </ion-content>
+</ion-view>
