@@ -50,7 +50,7 @@ $infmt ="<p><b>Name:</b> $fname $lname \r\n</P>".
         "<p><b>Adults:</b> $adults  <b>Children:</b> $child \r\n</p>".
         "<p><b>Room:</b> $roomname  <b>Price:</b> $price kr \r\n</p>".
         "<p><b>Arrival Date:</b> $adatestr  \r\n</p>".
-        "<p><b>Departual Date:</b> $ddatestr \r\n</p>".
+        "<p><b>Departure Date:</b> $ddatestr \r\n</p>".
         "<p><b>Nights:</b> $nights \r\n</p>".
         "<p><b>Total:</b> $total kr \r\n</p>".
         "<p>Welcome!</p>";
