@@ -7,8 +7,8 @@
             <p><b>Name:</b> {{bookinfo.fname}} {{bookinfo.lname}}  <b>Mobile:</b> {{bookinfo.mobile}}  <b>Email:</b> {{bookinfo.email}}</P>
             <p><b>Adults:</b> {{bookinfo.adults}}  <b>Children:</b> {{bookinfo.child}} </p>
             <p><b>Room:</b> {{bookinfo.roomname}}  <b>Price:</b> {{bookinfo.price}} kr </p>
-            <p><b>Arrival Date:</b> {{bookinfo.adate}}</p>
-            <p><b>Departual Date:</b> {{bookinfo.ddate}} </p>
+            <p><b>Arrival Date:</b> {{bookinfo.adate | date :  "yyyy-MM-dd"}}</p>
+            <p><b>Departual Date:</b> {{bookinfo.ddate | date :  "y-MM-dd"}} </p>
             <p><b>Nights:</b> {{bookinfo.nights}} </p>
             <p><b>Total:</b> {{bookinfo.total}} kr </p>
         </div>

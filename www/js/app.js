@@ -234,11 +234,21 @@ angular.module('HotelApp', ['ionic'])
 .controller("BookingConCtrl", function($scope, $http, myFactory) {
   $scope.bookinfo = myFactory.get();
 
-  // var getDateStr=function(pdate){
-  //   var day = ("0" + pdate.getDate()).slice(-2); //格式化日，如果小于9，前面补0
-  //   var month = ("0" + (pdate.getMonth() + 1)).slice(-2); //格式化月，如果小于9，前面补0
-  //   return pdate.getFullYear()+"-"+(month)+"-"+(day);
-  // }
+  var getGenderStr=function(gender){
+    switch(gender) {
+      case "0":
+        return "Male";
+        break;
+      case "1":
+        return "Female";
+        break;
+      case "2":
+        return "Other";
+        break;
+      default:
+        break;
+    }  
+  }
 
   if($scope.bookinfo.fname==null || $scope.bookinfo.lname==null || $scope.bookinfo.email==null || $scope.bookinfo.mobile==null || $scope.bookinfo.price==null){ 
     $scope.nobookmsg="You havn't finished your reservation. Go back to fill in the empty inputs!";
@@ -248,6 +258,7 @@ angular.module('HotelApp', ['ionic'])
   }
   else {
     $scope.roomchosen=$scope.bookinfo.roomname+" - Price: "+$scope.bookinfo.price+" kr";
+    $scope.genderstr = getGenderStr($scope.bookinfo.gender); //get gender string by function above
     $scope.ifshow = true;
   }  
 
